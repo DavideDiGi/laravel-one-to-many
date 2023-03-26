@@ -16,9 +16,10 @@
 
     </div>
 
-    <div class="w-50 ms-5 mt-2 pe-4 border-end pb-4 border-bottom">
+    <div class="w-50 ms-5 pe-4 border-end pb-4 border-bottom">
 
-        <h5 class="title-slug">{{ $project->slug }}</h5>
+        <p class="title-slug small ">{{ $project->slug }}</p>
+        <h4>Tipo progetto: {{ $project->type ? $project->type->name : 'Non definito' }}</h4>
         <p class="card-text fw-light">{{ $project->content }}</p>
         @if ($project->cover_pic)
             <div class="pb-3">
