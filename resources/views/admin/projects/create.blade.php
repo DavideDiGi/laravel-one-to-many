@@ -28,6 +28,16 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="type_id" id="type_id" class="form-label">Tipo</label>
+                    <select name="type_id" id="type_id">
+                        <option value="">Generico</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-3">
                     <label for="cover_pic" class="form-label">Inserisci una copertina</label>
                     <input type="file" class="form-control" id="cover_pic" name="cover_pic" accept="image/*"> 
                 </div>
